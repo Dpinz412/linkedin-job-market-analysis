@@ -119,5 +119,38 @@ Run notebooks 01 → 05 in order.
 
 Tip: keep raw CSVs out of Git. The repo already ignores data/.
 
+## Methods (nutshell)
 
+Wrangling: csvkit/xsv checks → pandas cleaning; drop malformed text fields when they degrade structure; standardize salary units; remove duplicate companies; left-join industry & employee counts. 
 
+Linkedin Job Market Analysis
+
+Modeling: star schema (fact + dims) to make group-bys trivial and performant for downstream SQL/BI. 
+
+Linkedin Job Market Analysis
+
+Analytics: grouped salary stats by industry × role level, state-level compensation maps, and applicant intensity by industry.
+
+Tooling: Python (pandas, matplotlib), Jupyter; optional PostgreSQL for SQL validation.
+
+## Results — highlights
+
+- **Top-paying industries (entry-level, IT, full-time; avg normalized salary):**
+  1) Technology, Information & Internet — **$119,330**
+  2) Computer & Network Security — **$110,134**
+  3) Computer Networking Products — **$104,500**
+
+- **Top states by entry-level compensation (median/avg normalized salary, top-10):**
+  DC **$69,804**; IN **$61,532**; AR **$60,387**; MN **$57,202**; WA **$56,930**;  
+  NY **$56,786**; NE **$55,447**; MD **$55,352**; UT **$54,555**; CA **$53,642**.
+
+- **SQL-specific entry-level roles:** Virginia leads at **$132,775**; California has the most SQL postings with an average of **$110,885**.
+
+- **Applicant intensity (industry engagement):**
+  - Staffing & Recruiting — **265,328** views / **59,355** applications  
+  - IT Services & IT Consulting — **238,027** / **60,926**  
+  - Software Development — **153,912** / **29,546**
+
+- **Remote vs on-site attention:** Remote-allowed jobs get ~**44.3** views/post vs ~**10.5** for non-remote.
+
+- **Role type effect (IT, entry-level):** Contract pays above Part-time/Internship; internships and part-time concentrate in Software Development and IT Services & Consulting.
